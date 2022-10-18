@@ -1,0 +1,63 @@
+#include <Servo.h>
+
+Servo myServo;
+const int buttonPin = 13; 
+int buttonState = 0;   
+void setup() {
+  // put your setup code here, to run once:
+  myServo.attach(9);
+    pinMode(buttonPin, INPUT);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+    buttonState = digitalRead(buttonPin);
+
+  
+  if (buttonState == HIGH) {
+      int randomPosition = random(1, 5);
+      
+  movement();
+  if(randomPosition == 1){
+    myServo.write(55);
+  delay(800);
+    }
+     if(randomPosition == 2 || randomPosition == 3){
+    myServo.write(90);
+  delay(800);
+    }
+      if(randomPosition == 4){
+    myServo.write(180);
+  delay(800);
+    }
+}
+}
+
+void movement(){
+   myServo.write(55);
+  delay(800);
+  myServo.write(90);
+  delay(800);
+  myServo.write(180);
+  delay(800);
+  myServo.write(55);
+  delay(800);
+  myServo.write(100);
+  delay(800);
+  myServo.write(180);
+  delay(800);
+  myServo.write(55);
+  delay(800);
+  myServo.write(100);
+  delay(800);
+  myServo.write(180);
+  delay(800);
+  myServo.write(55);
+  delay(800);
+  myServo.write(100);
+  delay(800);
+  myServo.write(180);
+  delay(800); 
+   
+  }
